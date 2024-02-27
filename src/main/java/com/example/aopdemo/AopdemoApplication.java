@@ -1,5 +1,6 @@
 package com.example.aopdemo;
 
+import com.example.aopdemo.entity.Account;
 import com.example.aopdemo.repository.AccountRepository;
 import com.example.aopdemo.repository.MembershipRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -23,7 +24,7 @@ public class AopdemoApplication {
     }
 
     private void demoBeforeAdvice(AccountRepository accountRepository, MembershipRepository membershipRepository) {
-        accountRepository.addAccount();
+        accountRepository.addAccount(new Account("Aleksei"));
         membershipRepository.addAccount();
     }
 
