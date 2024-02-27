@@ -1,6 +1,7 @@
 package com.example.aopdemo;
 
 import com.example.aopdemo.repository.AccountRepository;
+import com.example.aopdemo.repository.MembershipRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,14 +16,15 @@ public class AopdemoApplication {
     }
 
     @Bean
-    CommandLineRunner commandLineRunner(AccountRepository accountRepository){
+    CommandLineRunner commandLineRunner(AccountRepository accountRepository, MembershipRepository membershipRepository){
         return runner ->{
-          demoBeforeAdvice(accountRepository);
+          demoBeforeAdvice(accountRepository, membershipRepository);
         };
     }
 
-    private void demoBeforeAdvice(AccountRepository accountRepository) {
+    private void demoBeforeAdvice(AccountRepository accountRepository, MembershipRepository membershipRepository) {
         accountRepository.addAccount();
+        membershipRepository.addAccount();
     }
 
 
