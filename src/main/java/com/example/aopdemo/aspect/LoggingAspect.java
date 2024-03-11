@@ -10,7 +10,7 @@ public class LoggingAspect {
 //    @Before("execution( * add*())") // no args
 //    @Before("execution( * add*(*))") // method with one arg of any type
 //    @Before("execution( * addAccount(..))")  // 0 or more arguments of any type
-    @Before("execution( * addAccount(com.example.aopdemo.entity.Account))")  // 0 or more arguments of any type
+    @Before("execution( * addAccount(com.example.aopdemo.entity.Account, ..))")  // 0 or more arguments of any type
     public void logBeforeAdvice(){
         System.out.println("Logging before method call");
     }
